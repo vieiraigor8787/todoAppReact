@@ -10,3 +10,5 @@ server.use(bodyParser.json())
 
 server.listen(port, function() {
 })
+
+module.exports = server
