@@ -9,5 +9,4 @@ server.use(bodyParser.urlencoded({ extended: true }))
 server.use(bodyParser.json())
 
 server.listen(port, function() {
-    console.log(`foda-se puto ${port}`)
 })
