@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import Header from '../template/header';
 
 export default class Todo extends Component {
     render() {
         return (
             <div>
-                <h1>Tesste</h1>
+                <Header name='Tarefas' small='Cadastro' />
             </div>
         )
     }
