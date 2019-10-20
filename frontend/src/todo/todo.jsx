@@ -22,7 +22,7 @@ export default class Todo extends Component {
 
     refresh() {
         axios.get(`${URL}?sort=-createdAt`)
-            .then(resp => this.setState({ ...this.state, description: '', lista: resp.data }))
+            .then(resp => this.setState({ ...this.state, description: '', list: resp.data }))
 
     }
 
@@ -36,9 +36,9 @@ export default class Todo extends Component {
             .then(resp => this.refresh())
     }
 
-    handleRemove() {
+    handleRemove(todo) {
         axios.delete(`${URL}/${todo._id}`)
-            .then(resp => this.refresh())
+            .then(resp => this.refresh(this.state.description))
     }
 
     render() {
