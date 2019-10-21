@@ -14,11 +14,19 @@ export const search = () => {
         payload: req
     }
 }
-
+//multi
+// export const add = description => {
+//     const req = axios.post(URL, { description })
+//     return [
+//         { type: 'TODO_ADDED', payload: req }, 
+//         search()
+//     ]
+// }
+//thunk
 export const add = description => {
-    const req = axios.post(URL, { description })
-    return [
-        { type: 'TODO_ADDED', payload: req }, 
-        search()
-    ]
+    return dispatch => {
+        axios.post(URL, { description })
+            .then(resp => dispatch({ type: 'TODO_ADDED', payload: resp.data}))
+            .then(resp => dispatch(search()))
+    }
 }
