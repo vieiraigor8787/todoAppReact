@@ -14,3 +14,11 @@ export const search = () => {
         payload: req
     }
 }
+
+export const add = description => {
+    const req = axios.post(URL, { description })
+    return {
+        type: 'TODO_ADDED',
+        payload: req
+    }
+}
